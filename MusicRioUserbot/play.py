@@ -17,6 +17,10 @@ from config import HNDLR, bot, call_py
 from MusicRioUserbot.helpers.queues import QUEUE, add_to_queue, get_queue
 
 
+AMBILFOTO = ["none",]
+
+IMAGE_THUMBNAIL = random.choice(AMBILFOTO)
+
 # music player
 def ytsearch(query):
     try:
