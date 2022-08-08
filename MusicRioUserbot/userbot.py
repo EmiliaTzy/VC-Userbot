@@ -100,7 +100,7 @@ async def help(client, m: Message):
     await m.delete()
     HELP = f"""
 <b>👋 Hallo {m.from_user.mention}!
-🛠 MENU BANTUAN MUSIC PLAYER
+🛠 MENU BANTUAN EIKO MUSIC PLAYER
 ⚡ PERINTAH UNTUK SEMUA ORANG
 • {HNDLR}play [judul lagu | link youtube | balas file audio] - untuk memutar lagu
 • {HNDLR}videoplay [judul video | link youtube | balas file video] - untuk memutar video
