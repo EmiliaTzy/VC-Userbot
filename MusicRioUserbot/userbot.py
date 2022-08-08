@@ -42,7 +42,7 @@ async def ping(client, m: Message):
    end = datetime.now()
    uptime_sec = (current_time - START_TIME).total_seconds()
    uptime = await _human_time_duration(int(uptime_sec))
-   await m_reply.edit(f"**┞◈𝗣𝗼𝗻𝗴!! Music Rio Userbot🏓**\n**┞◈Pinger**  - {delta_ping * 1000:.3f} ms \n**┞◈Uptime** - {uptime}")
+   await m_reply.edit(f"**┞◈𝗣𝗼𝗻𝗴!! Music Eiko Userbot🏓**\n**┞◈Pinger**  - {delta_ping * 1000:.3f} ms \n**┞◈Uptime** - {uptime}")
 
 
 @Client.on_message(filters.command(["pong"], prefixes=f"{HNDLR}"))
@@ -74,7 +74,7 @@ async def pong(client, m: Message):
    uptime_sec = (current_time - START_TIME).total_seconds()
    uptime = await _human_time_duration(int(uptime_sec))
    await pong.edit(
-       f"**❏RioMusicUserbot**\n**❏Pinging** : {delta_ping * 1000:.3f} ms\n**❏Bot Uptime** : {uptime}")
+       f"**❏EikoMusicUserbot**\n**❏Pinging** : {delta_ping * 1000:.3f} ms\n**❏Bot Uptime** : {uptime}")
 
 @Client.on_message(
     filters.user(SUDO_USERS) & filters.command(["restart"], prefixes=f"{HNDLR}")
@@ -128,12 +128,12 @@ async def repo(client, m: Message):
 🗃️ Music Dan Video Player UserBot
 🔰 Telegram UserBot Untuk Memutar Lagu Dan Video Di Obrolan Suara Telegram.
 👩‍💻 Maintaned By 
-• [Rio](https://t.me/fckualot)
+• [Az](https://t.me/tth_kiya98)
 📝 Persyaratan
 • Python 3.8+
 • FFMPEG
 • Nodejs v16+
-[Repo VC-Userbot](https://github.com/RioProjectX/VC-Userbot)
+[Repo VC-Userbot](https://github.com/EmiliaTzy/VC-Userbot)
 📝 Variabel Yang Dibutuhkan
 • `API_ID` - Dapatkan Dari [my.telegram.org](https://my.telegram.org)
 • `API_HASH` - Dapatkan Dari [my.telegram.org](https://my.telegram.org)
