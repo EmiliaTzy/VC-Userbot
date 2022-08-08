@@ -160,7 +160,7 @@ async def play(client, m: Message):
                         await huehue.delete()
                         # await m.reply_to_message.delete()
                         await m.reply_photo(
-                            photo=f"{IMAGE_THUMBNAIL}",
+                            photo=f"{https://telegra.ph/file/18d25616d9883400af112.png}",
                             caption=f"""
 **▶ Lagu Di Antrian Ke {pos}
 🏷 Judul: [{songname}]
@@ -181,7 +181,7 @@ async def play(client, m: Message):
                             await huehue.delete()
                             # await m.reply_to_message.delete()
                             await m.reply_photo(
-                                photo=f"{IMAGE_THUMBNAIL}",
+                                photo=f"https://telegra.ph/file/18d25616d9883400af112.png",
                                 caption=f"""
 **▶ Mulai Memutar Lagu
 🏷️ Judul: [{songname}]
@@ -289,7 +289,7 @@ async def videoplay(client, m: Message):
                         await huehue.delete()
                         # await m.reply_to_message.delete()
                         await m.reply_photo(
-                            photo=f"{IMAGE_THUMBNAIL}",
+                            photo=f"{https://telegra.ph/file/18d25616d9883400af112.png}",
                             caption=f"""
 **▶ Video Di Antrian Ke {pos}
 🏷️ Judul: [{songname}]
