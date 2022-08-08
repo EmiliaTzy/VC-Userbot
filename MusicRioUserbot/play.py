@@ -16,9 +16,6 @@ from youtubesearchpython import VideosSearch
 from config import HNDLR, bot, call_py
 from MusicRioUserbot.helpers.queues import QUEUE, add_to_queue, get_queue
 
-AMBILFOTO = ["https://telegra.ph/file/896bfc363cf082ae32592.jpg",]
-
-IMAGE_THUMBNAIL = random.choice(AMBILFOTO)
 
 # music player
 def ytsearch(query):
