@@ -17,7 +17,7 @@ from config import HNDLR, bot, call_py
 from MusicRioUserbot.helpers.queues import QUEUE, add_to_queue, get_queue
 
 
-AMBILFOTO = ["none",]
+AMBILFOTO = ["https://telegra.ph/file/613f681a511feb6d1b186.jpg",]
 
 IMAGE_THUMBNAIL = random.choice(AMBILFOTO)
 
@@ -99,7 +99,7 @@ async def play(client, m: Message):
     if replied:
         if replied.audio or replied.voice:
             await m.delete()
-            huehue = await replied.reply("**✧ Memproses Request..**")
+            huehue = await replied.reply("**✧ Memproses Permintaan..**")
             dl = await replied.download()
             link = replied.link
             if replied.audio:
@@ -273,7 +273,7 @@ async def videoplay(client, m: Message):
             )
         else:
             await m.delete()
-            huehue = await m.reply("**ðŸ”Ž Pencarian Lagu... Mohon Bersabar**")
+            huehue = await m.reply("**Pencarian Lagu... Mohon Bersabar**")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             Q = 720
