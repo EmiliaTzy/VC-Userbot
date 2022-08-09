@@ -113,7 +113,7 @@ async def play(client, m: Message):
                     caption=f"""
 **▶ Lagu Di Antrian Ke {pos}
 🏷 Judul: [{songname}]
-💡 Status: Friendzone
+💡 Status: Playing
 🎧 Permintaan: {m.from_user.mention}**
 """,
                 )
@@ -133,7 +133,7 @@ async def play(client, m: Message):
                     caption=f"""
 **▶ Mulai Memutar Lagu
 🏷 Judul: [{songname}]
-💡 Status: Friendzone
+💡 Status: Playing
 🎧 Atas Permintaan: {m.from_user.mention}**
 """,
                 )
@@ -143,11 +143,11 @@ async def play(client, m: Message):
             await m.reply("Balas ke File Audio atau berikan sesuatu untuk Pencarian")
         else:
             await m.delete()
-            huehue = await m.reply("**✨ Sedang Mencari Mantan eh lagu maksudnya...Sabar nanti keban**")
+            huehue = await m.reply("**✨ Sedang Mencari lagu...Sabar ya😴**")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             if search == 0:
-                await huehue.edit("`Tidak Menemukan dia yang telah Diberikan ke orang lain`")
+                await huehue.edit("**Tidak Menemukan lagu, ketik judul yang benar🥲**")
             else:
                 songname = search[0]
                 url = search[1]
