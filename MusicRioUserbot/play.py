@@ -109,11 +109,11 @@ async def play(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://telegra.ph/file/18d25616d9883400af112.png",
+                    photo="https://telegra.ph/file/6cd4bfd7c7b079fa8be90.jpg",
                     caption=f"""
 **▶ Lagu Di Antrian Ke {pos}
 🏷 Judul: [{songname}]
-💡 Status: Playing
+💡 Status: Friendzone
 🎧 Permintaan: {m.from_user.mention}**
 """,
                 )
@@ -129,11 +129,11 @@ async def play(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://telegra.ph/file/18d25616d9883400af112.png",
+                    photo="https://telegra.ph/file/6cd4bfd7c7b079fa8be90.jpg",
                     caption=f"""
 **▶ Mulai Memutar Lagu
 🏷 Judul: [{songname}]
-💡 Status: Playing
+💡 Status: Friendzone
 🎧 Atas Permintaan: {m.from_user.mention}**
 """,
                 )
@@ -143,11 +143,11 @@ async def play(client, m: Message):
             await m.reply("Balas ke File Audio atau berikan sesuatu untuk Pencarian")
         else:
             await m.delete()
-            huehue = await m.reply("**✨ Sedang Mencari Lagu... Mohon Bersabar**")
+            huehue = await m.reply("**✨ Sedang Mencari Mantan eh lagu maksudnya...Sabar nanti keban**")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             if search == 0:
-                await huehue.edit("`Tidak Menemukan Apapun untuk Kueri yang Diberikan`")
+                await huehue.edit("`Tidak Menemukan dia yang telah Diberikan ke orang lain`")
             else:
                 songname = search[0]
                 url = search[1]
@@ -181,7 +181,7 @@ async def play(client, m: Message):
                             await huehue.delete()
                             # await m.reply_to_message.delete()
                             await m.reply_photo(
-                                photo=f"https://telegra.ph/file/18d25616d9883400af112.png",
+                                photo=f"https://telegra.ph/file/6cd4bfd7c7b079fa8be90.jpg",
                                 caption=f"""
 **▶ Mulai Memutar Lagu
 🏷️ Judul: [{songname}]
@@ -228,7 +228,7 @@ async def videoplay(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://telegra.ph/file/18d25616d9883400af112.png",
+                    photo="https://telegra.ph/file/6cd4bfd7c7b079fa8be90.jpg",
                     caption=f"""
 **▶ Video Di Antrian Ke {pos}
 🏷️ Judul: [{songname}]
@@ -252,7 +252,7 @@ async def videoplay(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://telegra.ph/file/18d25616d9883400af112.png",
+                    photo="https://telegra.ph/file/6cd4bfd7c7b079fa8be90.jpg",
                     caption=f"""
 **▶ Mulai Memutar Video
 🏷️ Judul: [{songname}]
@@ -357,7 +357,7 @@ async def playfrom(client, m: Message):
                     add_to_queue(chat_id, songname, location, link, "Audio", 0)
                     # await m.reply_to_message.delete()
                     await m.reply_photo(
-                        photo="https://telegra.ph/file/18d25616d9883400af112.png",
+                        photo="https://telegra.ph/file/6cd4bfd7c7b079fa8be90.jpg",
                         caption=f"""
 **▶ Mulai Memutar Lagu Dari {chat}
 🏷️ Judul: [{songname}]
