@@ -7,7 +7,6 @@ from MusicRioUserbot.helpers.queues import QUEUE, clear_queue
 
 
 @Client.on_message(filters.command(["skip"], prefixes=f"{HNDLR}"))
-@authorized_users_only
 async def skip(client, m: Message):
     await m.delete()
     chat_id = m.chat.id
@@ -16,7 +15,7 @@ async def skip(client, m: Message):
         if op == 0:
             await m.reply("**❌ Tidak ada apapun didalam antrian untuk dilewati!**")
         elif op == 1:
-            await m.reply("Nggak ada yang request, Meninggalkan kalian dulu**")
+            await m.reply("Nggak ada yang request, Meninggalkan vcg dulu bye**")
         else:
             await m.reply(
                 f"**⏭ Melewati pemutaran** \n**🎵 Sekarang memutar** - [{op[0]}]({op[1]}) | `{op[2]}`",
