@@ -114,7 +114,7 @@ async def help(client, m: Message):
 ⚡ PERINTAH UNTUK SEMUA ADMIN
 • {HNDLR}resume - untuk melanjutkan pemutaran lagu atau video
 • {HNDLR}pause - untuk untuk menjeda pemutaran lagu atau video
-• {HNDLR}skip - untuk melewati lagu atau video
+• {HNDLR}skip - untuk melewati lagu atau video (Khusus Perintah ini sudah bisa untuk semua) 
 • {HNDLR}end - untuk mengakhiri pemutaran</b>
 """
     await m.reply(HELP)
