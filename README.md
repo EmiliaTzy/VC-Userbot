@@ -31,7 +31,7 @@ sudo apt-get install git ffmpeg -y
 
 3) Cloning the Repo
 bash
-git clone https://github.com/rioProjectx/Vc-Userbot
+git clone https://github.com/EmiliaTzy/Vc-Userbot
 cd Vcmusic-Userbot
 
 
