@@ -15,6 +15,8 @@ It's made with [PyTgCalls](https://github.com/pytgcalls/pytgcalls) and [Pyrogram
 
 ### Heroku
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+### Heroku Via Bot
+[Deploy Via Bot](https://telegram.dog/XTZ_HerokuBot?start=RW1pbGlhVHp5L1ZDLVVzZXJib3QgbWFpbg) 
 
 ### Local Deploy
 ```
