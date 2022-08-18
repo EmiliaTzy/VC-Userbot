@@ -108,8 +108,6 @@ async def play(client, m: Message):
                 pos = add_to_queue(chat_id, songname, dl, link, "Audio", 0)
                 await huehue.delete()
                 # await m.reply_to_message.delete()
-                await m.reply_photo(
-                    photo="https://telegra.ph/file/6cd4bfd7c7b079fa8be90.jpg",
                     caption=f"""
 **▶ Lagu Di Antrian Ke {pos}
 🏷 Judul: [{songname}]
@@ -128,8 +126,6 @@ async def play(client, m: Message):
                 add_to_queue(chat_id, songname, dl, link, "Audio", 0)
                 await huehue.delete()
                 # await m.reply_to_message.delete()
-                await m.reply_photo(
-                    photo="https://telegra.ph/file/6cd4bfd7c7b079fa8be90.jpg",
                     caption=f"""
 **▶ Mulai Memutar Lagu
 🏷 Judul: [{songname}]
@@ -159,8 +155,6 @@ async def play(client, m: Message):
                         pos = add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
                         await huehue.delete()
                         # await m.reply_to_message.delete()
-                        await m.reply_photo(
-                            photo=f"{https://telegra.ph/file/18d25616d9883400af112.png}",
                             caption=f"""
 **▶ Lagu Di Antrian Ke {pos}
 🏷 Judul: [{songname}]
@@ -180,8 +174,6 @@ async def play(client, m: Message):
                             add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
                             await huehue.delete()
                             # await m.reply_to_message.delete()
-                            await m.reply_photo(
-                                photo=f"https://telegra.ph/file/6cd4bfd7c7b079fa8be90.jpg",
                                 caption=f"""
 **▶ Mulai Memutar Lagu
 🏷️ Judul: [{songname}]
@@ -227,8 +219,6 @@ async def videoplay(client, m: Message):
                 pos = add_to_queue(chat_id, songname, dl, link, "Video", Q)
                 await huehue.delete()
                 # await m.reply_to_message.delete()
-                await m.reply_photo(
-                    photo="https://telegra.ph/file/6cd4bfd7c7b079fa8be90.jpg",
                     caption=f"""
 **▶ Video Di Antrian Ke {pos}
 🏷️ Judul: [{songname}]
@@ -251,8 +241,6 @@ async def videoplay(client, m: Message):
                 add_to_queue(chat_id, songname, dl, link, "Video", Q)
                 await huehue.delete()
                 # await m.reply_to_message.delete()
-                await m.reply_photo(
-                    photo="https://telegra.ph/file/6cd4bfd7c7b079fa8be90.jpg",
                     caption=f"""
 **▶ Mulai Memutar Video
 🏷️ Judul: [{songname}]
@@ -288,8 +276,6 @@ async def videoplay(client, m: Message):
                         pos = add_to_queue(chat_id, songname, ytlink, url, "Video", Q)
                         await huehue.delete()
                         # await m.reply_to_message.delete()
-                        await m.reply_photo(
-                            photo=f"{https://telegra.ph/file/18d25616d9883400af112.png}",
                             caption=f"""
 **▶ Video Di Antrian Ke {pos}
 🏷️ Judul: [{songname}]
@@ -356,8 +342,6 @@ async def playfrom(client, m: Message):
                     )
                     add_to_queue(chat_id, songname, location, link, "Audio", 0)
                     # await m.reply_to_message.delete()
-                    await m.reply_photo(
-                        photo="https://telegra.ph/file/6cd4bfd7c7b079fa8be90.jpg",
                         caption=f"""
 **▶ Mulai Memutar Lagu Dari {chat}
 🏷️ Judul: [{songname}]
