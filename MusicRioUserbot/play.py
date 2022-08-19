@@ -313,7 +313,6 @@ async def playfrom(client, m: Message):
                         stream_type=StreamType().pulse_stream,
                     )
                     add_to_queue(chat_id, songname, location, link, "Audio", 0)
-                    # await m.reply_to_message.delete()
                         caption=f"""▶ Lagu Di Antrian Ke {pos}
                                     🏷 Judul: [{songname}]
                                     💡 Status: Playing
