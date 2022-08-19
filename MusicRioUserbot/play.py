@@ -168,7 +168,6 @@ async def play(client, m: Message):
                                         💡 Status: Playing
                                         🎧 Permintaan: {m.from_user.mention}
 """,
-                            )
                         except Exception as ep:
                             await huehue.edit(f"`{ep}`")
 
@@ -275,7 +274,6 @@ async def videoplay(client, m: Message):
                                         💡 Status: Playing
                                         🎧 Permintaan: {m.from_user.mention}
 """,
-                            )
                         except Exception as ep:
                             await huehue.edit(f"`{ep}`")
 
@@ -321,7 +319,6 @@ async def playfrom(client, m: Message):
                                     💡 Status: Playing
                                     🎧 Permintaan: {m.from_user.mention}
 """,
-                    )
             await hmm.delete()
             await m.reply(
                 f"• Menambahkan {lmt} Lagu Ke Dalam Antrian\n Klik {HNDLR}playlist Untuk Melihat Daftar Putar**"
