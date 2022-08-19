@@ -107,13 +107,11 @@ async def play(client, m: Message):
             if chat_id in QUEUE:
                 pos = add_to_queue(chat_id, songname, dl, link, "Audio", 0)
                 await huehue.delete()
-                caption=f"""
- **▶ Lagu Di Antrian Ke {pos}
-🏷 Judul: [{songname}]
-💡 Status: Playing
-🎧 Permintaan: {m.from_user.mention}**
+                caption=f"""▶ Lagu Di Antrian Ke {pos}
+                            🏷 Judul: [{songname}]
+                            💡 Status: Playing
+                            🎧 Permintaan: {m.from_user.mention}
 """,
-                )
             else:
                 await call_py.join_group_call(
                     chat_id,
@@ -124,14 +122,11 @@ async def play(client, m: Message):
                 )
                 add_to_queue(chat_id, songname, dl, link, "Audio", 0)
                 await huehue.delete()
-                caption=f"""
-**▶ Mulai Memutar Lagu
-🏷 Judul: [{songname}]
-💡 Status: Playing
-🎧 Atas Permintaan: {m.from_user.mention}**
-""",
-                )
-
+                caption=f"""▶ Lagu Di Antrian Ke {pos}
+                            🏷 Judul: [{songname}]
+                            💡 Status: Playing
+                            🎧 Permintaan: {m.from_user.mention}
+""",               
     else:
         if len(m.command) < 2:
             await m.reply("Balas ke File Audio atau berikan sesuatu untuk Pencarian")
@@ -152,13 +147,11 @@ async def play(client, m: Message):
                     if chat_id in QUEUE:
                         pos = add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
                         await huehue.delete()
-                        caption=f"""
-**▶ Lagu Di Antrian Ke {pos}
-🏷 Judul: [{songname}]
-💡 Status: Playing
-🎧 Atas Permintaan: {m.from_user.mention}**
+                        caption=f"""▶ Lagu Di Antrian Ke {pos}
+                                    🏷 Judul: [{songname}]
+                                    💡 Status: Playing
+                                    🎧 Permintaan: {m.from_user.mention}
 """,
-                        )
                     else:
                         try:
                             await call_py.join_group_call(
@@ -170,11 +163,10 @@ async def play(client, m: Message):
                             )
                             add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
                             await huehue.delete()
-                            caption=f"""
-**▶ Mulai Memutar Lagu
-🏷️ Judul: [{songname}]
-💡 Status: Playing
-🎧 Atas Permintaan: {m.from_user.mention}**
+                            caption=f"""▶ Lagu Di Antrian Ke {pos}
+                                        🏷 Judul: [{songname}]
+                                        💡 Status: Playing
+                                        🎧 Permintaan: {m.from_user.mention}
 """,
                             )
                         except Exception as ep:
@@ -214,13 +206,11 @@ async def videoplay(client, m: Message):
             if chat_id in QUEUE:
                 pos = add_to_queue(chat_id, songname, dl, link, "Video", Q)
                 await huehue.delete()
-                caption=f"""
-**▶ Video Di Antrian Ke {pos}
-🏷️ Judul: [{songname}]
-💡 Status: Playing
-🎧 Atas Permintaan: {m.from_user.mention}**
+                caption=f"""▶ Video Di Antrian Ke {pos}
+                            🏷 Judul: [{songname}]
+                            💡 Status: Playing
+                            🎧 Permintaan: {m.from_user.mention}
 """,
-                )
             else:
                 if Q == 720:
                     hmmm = HighQualityVideo()
@@ -235,14 +225,11 @@ async def videoplay(client, m: Message):
                 )
                 add_to_queue(chat_id, songname, dl, link, "Video", Q)
                 await huehue.delete()
-                caption=f"""
-**▶ Mulai Memutar Video
-🏷️ Judul: [{songname}]
-💡 Status: Playing
-🎧 Atas permintaan: {m.from_user.mention}**
+                caption=f"""▶ Video Di Antrian Ke {pos}
+                            🏷 Judul: [{songname}]
+                            💡 Status: Playing
+                            🎧 Permintaan: {m.from_user.mention}
 """,
-                )
-
     else:
         if len(m.command) < 2:
             await m.reply(
@@ -269,13 +256,11 @@ async def videoplay(client, m: Message):
                     if chat_id in QUEUE:
                         pos = add_to_queue(chat_id, songname, ytlink, url, "Video", Q)
                         await huehue.delete()
-                        caption=f"""
-**▶ Video Di Antrian Ke {pos}
-🏷️ Judul: [{songname}]
-💡 Status: Playing
-🎧 Atas Permintaan: {m.from_user.mention}**
+                        caption=f"""▶ Video Di Antrian Ke {pos}
+                                    🏷 Judul: [{songname}]
+                                    💡 Status: Playing
+                                    🎧 Permintaan: {m.from_user.mention}
 """,
-                        )
                     else:
                         try:
                             await call_py.join_group_call(
@@ -285,11 +270,10 @@ async def videoplay(client, m: Message):
                             )
                             add_to_queue(chat_id, songname, ytlink, url, "Video", Q)
                             await huehue.delete() 
-                            caption=f"""
-**▶ Mulai Memutar Video
-🏷️ Judul: [{songname}]
-💡 Status: Playing
-🎧 Atas Permintaan: {m.from_user.mention}**
+                            caption=f"""▶ Video Di Antrian Ke {pos}
+                                        🏷 Judul: [{songname}]
+                                        💡 Status: Playing
+                                        🎧 Permintaan: {m.from_user.mention}
 """,
                             )
                         except Exception as ep:
@@ -332,11 +316,10 @@ async def playfrom(client, m: Message):
                     )
                     add_to_queue(chat_id, songname, location, link, "Audio", 0)
                     # await m.reply_to_message.delete()
-                        caption=f"""
-**▶ Mulai Memutar Lagu Dari {chat}
-🏷️ Judul: [{songname}]
-💡 Status: Playing
-🎧 Atas Permintaan: {m.from_user.mention}**
+                        caption=f"""▶ Lagu Di Antrian Ke {pos}
+                                    🏷 Judul: [{songname}]
+                                    💡 Status: Playing
+                                    🎧 Permintaan: {m.from_user.mention}
 """,
                     )
             await hmm.delete()
