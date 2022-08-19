@@ -107,9 +107,8 @@ async def play(client, m: Message):
             if chat_id in QUEUE:
                 pos = add_to_queue(chat_id, songname, dl, link, "Audio", 0)
                 await huehue.delete()
-                # await m.reply_to_message.delete()
-                    caption=f"""
-**▶ Lagu Di Antrian Ke {pos}
+                caption=f"""
+ **▶ Lagu Di Antrian Ke {pos}
 🏷 Judul: [{songname}]
 💡 Status: Playing
 🎧 Permintaan: {m.from_user.mention}**
@@ -125,8 +124,7 @@ async def play(client, m: Message):
                 )
                 add_to_queue(chat_id, songname, dl, link, "Audio", 0)
                 await huehue.delete()
-                # await m.reply_to_message.delete()
-                    caption=f"""
+                caption=f"""
 **▶ Mulai Memutar Lagu
 🏷 Judul: [{songname}]
 💡 Status: Playing
@@ -154,8 +152,7 @@ async def play(client, m: Message):
                     if chat_id in QUEUE:
                         pos = add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
                         await huehue.delete()
-                        # await m.reply_to_message.delete()
-                            caption=f"""
+                        caption=f"""
 **▶ Lagu Di Antrian Ke {pos}
 🏷 Judul: [{songname}]
 💡 Status: Playing
@@ -173,8 +170,7 @@ async def play(client, m: Message):
                             )
                             add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
                             await huehue.delete()
-                            # await m.reply_to_message.delete()
-                                caption=f"""
+                            caption=f"""
 **▶ Mulai Memutar Lagu
 🏷️ Judul: [{songname}]
 💡 Status: Playing
@@ -218,8 +214,7 @@ async def videoplay(client, m: Message):
             if chat_id in QUEUE:
                 pos = add_to_queue(chat_id, songname, dl, link, "Video", Q)
                 await huehue.delete()
-                # await m.reply_to_message.delete()
-                    caption=f"""
+                caption=f"""
 **▶ Video Di Antrian Ke {pos}
 🏷️ Judul: [{songname}]
 💡 Status: Playing
@@ -240,8 +235,7 @@ async def videoplay(client, m: Message):
                 )
                 add_to_queue(chat_id, songname, dl, link, "Video", Q)
                 await huehue.delete()
-                # await m.reply_to_message.delete()
-                    caption=f"""
+                caption=f"""
 **▶ Mulai Memutar Video
 🏷️ Judul: [{songname}]
 💡 Status: Playing
@@ -275,8 +269,7 @@ async def videoplay(client, m: Message):
                     if chat_id in QUEUE:
                         pos = add_to_queue(chat_id, songname, ytlink, url, "Video", Q)
                         await huehue.delete()
-                        # await m.reply_to_message.delete()
-                            caption=f"""
+                        caption=f"""
 **▶ Video Di Antrian Ke {pos}
 🏷️ Judul: [{songname}]
 💡 Status: Playing
@@ -291,11 +284,8 @@ async def videoplay(client, m: Message):
                                 stream_type=StreamType().pulse_stream,
                             )
                             add_to_queue(chat_id, songname, ytlink, url, "Video", Q)
-                            await huehue.delete()
-                            # await m.reply_to_message.delete()
-                            await m.reply_photo(
-                                photo=f"{IMAGE_THUMBNAIL}",
-                                caption=f"""
+                            await huehue.delete() 
+                            caption=f"""
 **▶ Mulai Memutar Video
 🏷️ Judul: [{songname}]
 💡 Status: Playing
