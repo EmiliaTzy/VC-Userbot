@@ -313,11 +313,16 @@ async def playfrom(client, m: Message):
                         stream_type=StreamType().pulse_stream,
                     )
                     add_to_queue(chat_id, songname, location, link, "Audio", 0)
-                        caption=f"""▶ Lagu Di Antrian Ke {pos}
-                                    🏷 Judul: [{songname}]
-                                    💡 Status: Playing
-                                    🎧 Permintaan: {m.from_user.mention}
+                        # await m.reply_to_message.delete()
+                    await m.reply_photo(
+                        photo="https://telegra.ph/file/18d25616d9883400af112.png",
+                        caption=f"""
+**▶ Mulai Memutar Lagu Dari {chat}
+🏷️ Judul: [{songname}]
+💡 Status: Playing
+🎧 Atas Permintaan: {m.from_user.mention}**
 """,
+                    )
             await hmm.delete()
             await m.reply(
                 f"• Menambahkan {lmt} Lagu Ke Dalam Antrian\n Klik {HNDLR}playlist Untuk Melihat Daftar Putar**"
