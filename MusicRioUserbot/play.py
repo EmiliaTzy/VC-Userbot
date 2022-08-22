@@ -168,8 +168,14 @@ async def play(client, m: Message):
                 await huehue.edit("`Tidak Menemukan Apapun untuk Kueri yang Diberikan`")
             else:
                 songname = search[0]
+                title = search[0]
                 url = search[1]
                 duration = search[2]
+                thumbnail = search[3]
+                userid = m.from_user.id
+                srrf = m.chat.title
+                ctitle = await CHAT_TITLE(srrf)
+                thumb = await gen_thumb(thumbnail, title, userid, ctitle)
                 hm, ytlink = await ytdl(url)
                 if hm == 0:
                     await huehue.edit(f"**YTDL ERROR¸** \n\n`{ytlink}`")
@@ -179,7 +185,7 @@ async def play(client, m: Message):
                         await huehue.delete()
                         # await m.reply_to_message.delete()
                         await m.reply_photo(
-                            photo=f"{IMAGE_THUMBNAIL}",
+                            photo=f"{thumb}",
                             caption=f"""
 **▶ Lagu Di Antrian Ke** `{pos}`
 🏷 **Judul:** [{songname}]({url})
@@ -289,7 +295,7 @@ async def videoplay(client, m: Message):
             )
         else:
             await m.delete()
-            huehue = await m.reply("**ðŸ”Ž Pencarian Lagu... Mohon Bersabar**")
+            huehue = await m.reply("**Pencarian Lagu... Mohon Bersabar**")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             Q = 720
@@ -300,8 +306,14 @@ async def videoplay(client, m: Message):
                 )
             else:
                 songname = search[0]
+                title = search[0]
                 url = search[1]
                 duration = search[2]
+                thumbnail = search[3]
+                userid = m.from_user.id
+                srrf = m.chat.title
+                ctitle = await CHAT_TITLE(srrf)
+                thumb = await gen_thumb(thumbnail, title, userid, ctitle)
                 hm, ytlink = await ytdl(url)
                 if hm == 0:
                     await huehue.edit(f"**YTDL ERROR¸** \n\n`{ytlink}`")
@@ -311,7 +323,7 @@ async def videoplay(client, m: Message):
                         await huehue.delete()
                         # await m.reply_to_message.delete()
                         await m.reply_photo(
-                            photo=f"{IMAGE_THUMBNAIL}",
+                            photo=f"{thumb}",
                             caption=f"""
 **▶ Video Di Antrian Ke** `{pos}`
 🏷️ **Judul:** [{songname}]({url})
