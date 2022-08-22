@@ -1,4 +1,5 @@
 import asyncio
+import random
 
 from pyrogram import Client, filters
 from pyrogram.types import Message
@@ -15,7 +16,7 @@ from youtubesearchpython import VideosSearch
 from config import HNDLR, bot, call_py
 from MusicRioUserbot.helpers.queues import QUEUE, add_to_queue, get_queue
 
-AMBILFOTO = [https://telegra.ph/file/613f681a511feb6d1b186.jpg,]
+AMBILFOTO = ["https://telegra.ph/file/613f681a511feb6d1b186.jpg",]
 
 IMAGE_THUMBNAIL = random.choice(AMBILFOTO)
 
