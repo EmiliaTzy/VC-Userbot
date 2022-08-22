@@ -16,7 +16,7 @@ from youtubesearchpython import VideosSearch
 from config import HNDLR, bot, call_py
 from MusicRioUserbot.helpers.queues import QUEUE, add_to_queue, get_queue
 
-AMBILFOTO = ["https://telegra.ph/file/613f681a511feb6d1b186.jpg",]
+AMBILFOTO = ["https://telegra.ph/file/613f681a511feb6d1b186.jpg"]
 
 IMAGE_THUMBNAIL = random.choice(AMBILFOTO)
 
@@ -33,13 +33,14 @@ def convert_seconds(seconds):
 def ytsearch(query):
     try:
         search = VideosSearch(query, limit=1).result()
-        data = search["result"][0]
-        songname = data["title"]
-        url = data["link"]
-        duration = data["duration"]
-        thumbnail = data["thumbnails"][0]["url"]
-        videoid = data["id"]
-        return [songname, url, duration, thumbnail]
+        for r in search.result()["result"]:
+            ytid = r["id"]
+            if len(r["title"]) > 34:
+                songname = r["title"][:70] + "..."
+            else:
+                songname = r["title"]
+            url = f"https://www.youtube.com/watch?v={ytid}"
+        return [songname, url]
     except Exception as e:
         print(e)
         return 0
@@ -67,13 +68,14 @@ async def ytdl(link):
 def ytsearch(query):
     try:
         search = VideosSearch(query, limit=1).result()
-        data = search["result"][0]
-        songname = data["title"]
-        url = data["link"]
-        duration = data["duration"]
-        thumbnail = data["thumbnails"][0]["url"]
-        videoid = data["id"]
-        return [songname, url, duration, thumbnail]
+        for r in search.result()["result"]:
+            ytid = r["id"]
+            if len(r["title"]) > 34:
+                songname = r["title"][:70] + "..."
+            else:
+                songname = r["title"]
+            url = f"https://www.youtube.com/watch?v={ytid}"
+        return [songname, url]
     except Exception as e:
         print(e)
         return 0
