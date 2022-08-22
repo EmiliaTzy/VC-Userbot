@@ -18,10 +18,10 @@ async def gen_thumb(thumbnail, title, userid, ctitle):
     async with aiohttp.ClientSession() as session:
         async with session.get(thumbnail) as resp:
             if resp.status == 200:
-                f = await aiofiles.open(f"search/thumb{videoid}.png", mode="wb")
+                f = await aiofiles.open(f"search/thumb{id}.png", mode="wb")
                 await f.write(await resp.read())
                 await f.close()
-    image1 = Image.open(f"search/thumb{videoid}.png")
+    image1 = Image.open(f"search/thumb{id}.png")
     image2 = Image.open(f"MusicRioUserbot/helpers/other/choose/rrc.png")
     image3 = changeImageSize(1280, 720, image1)
     image4 = changeImageSize(1280, 720, image2)
@@ -48,8 +48,8 @@ async def gen_thumb(thumbnail, title, userid, ctitle):
         stroke_fill="black",
         font=font,
     )
-    img.save(f"search/final{videoid}.png")
-    os.remove(f"search/temp{videoid}.png")
-    os.remove(f"search/thumb{videoid}.png")
-    final = f"search/final{videoid}.png"
+    img.save(f"search/final{id}.png")
+    os.remove(f"search/temp{id}.png")
+    os.remove(f"search/thumb{id}.png")
+    final = f"search/final{id}.png"
     return final
