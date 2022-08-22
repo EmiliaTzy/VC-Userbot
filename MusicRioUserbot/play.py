@@ -1,5 +1,4 @@
 import asyncio
-import random
 
 from pyrogram import Client, filters
 from pyrogram.types import Message
@@ -16,11 +15,6 @@ from youtubesearchpython import VideosSearch
 from config import HNDLR, bot, call_py
 from MusicRioUserbot.helpers.queues import QUEUE, add_to_queue, get_queue
 
-AMBILFOTO = [
-    "",
-]
-
-IMAGE_THUMBNAIL = random.choice(AMBILFOTO)
 
 
 def convert_seconds(seconds):
