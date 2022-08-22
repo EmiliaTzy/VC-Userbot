@@ -14,21 +14,21 @@ def changeImageSize(maxWidth, maxHeight, image):
     return newImage
 
 
-async def gen_thumb(thumbnail, title, id, ctitle):
+async def gen_thumb(thumbnail, title, url, ctitle):
     async with aiohttp.ClientSession() as session:
         async with session.get(thumbnail) as resp:
             if resp.status == 200:
-                f = await aiofiles.open(f"search/thumb{id}.png", mode="wb")
+                f = await aiofiles.open(f"MusicRioUserbot/helpers/other/choose/rrc.png", mode="wb")
                 await f.write(await resp.read())
                 await f.close()
-    image1 = Image.open(f"search/thumb{id}.png")
+    image1 = Image.open(f"MusicRioUserbot/helpers/other/choose/rrc.png")
     image2 = Image.open(f"MusicRioUserbot/helpers/other/choose/rrc.png")
     image3 = changeImageSize(1280, 720, image1)
     image4 = changeImageSize(1280, 720, image2)
     image5 = image3.convert("RGBA")
     image6 = image4.convert("RGBA")
-    Image.alpha_composite(image5, image6).save(f"search/temp{id}.png")
-    img = Image.open(f"search/temp{id}.png")
+    Image.alpha_composite(image5, image6).save(f"MusicRioUserbot/helpers/other/choose/rrc.png")
+    img = Image.open(f"MusicRioUserbot/helpers/other/choose/rrc.png")
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype("MusicRioUserbot/helpers/other/choose/Roboto-Light.ttf", 55)
     font2 = ImageFont.truetype("MusicRioUserbot/helpers/other/choose/finalfont.ttf", 65)
@@ -48,8 +48,8 @@ async def gen_thumb(thumbnail, title, id, ctitle):
         stroke_fill="black",
         font=font,
     )
-    img.save(f"search/final{id}.png")
-    os.remove(f"search/temp{id}.png")
-    os.remove(f"search/thumb{id}.png")
-    final = f"search/final{id}.png"
+    img.save(f"MusicRioUserbot/helpers/other/choose/rrc.png")
+    os.remove(f"MusicRioUserbot/helpers/other/choose/rrc.png")
+    os.remove(f"MusicRioUserbot/helpers/other/choose/rrc.png")
+    final = f"MusicRioUserbot/helpers/other/choose/rrc.png"
     return final
