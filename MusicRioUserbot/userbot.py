@@ -42,7 +42,7 @@ async def ping(client, m: Message):
    end = datetime.now()
    uptime_sec = (current_time - START_TIME).total_seconds()
    uptime = await _human_time_duration(int(uptime_sec))
-   await m_reply.edit(f"**┞◈𝗣𝗼𝗻𝗴!! Music Eiko Userbot🏓**\n**┞◈Pinger**  - {delta_ping * 1000:.3f} ms \n**┞◈Uptime** - {uptime}")
+   await m_reply.edit(f"**┞◈𝗣𝗼𝗻𝗴!! Music Userbot🏓**\n**┞◈Pinger**  - {delta_ping * 1000:.3f} ms \n**┞◈Uptime** - {uptime}")
 
 
 @Client.on_message(filters.command(["pong"], prefixes=f"{HNDLR}"))
@@ -74,7 +74,7 @@ async def pong(client, m: Message):
    uptime_sec = (current_time - START_TIME).total_seconds()
    uptime = await _human_time_duration(int(uptime_sec))
    await pong.edit(
-       f"**❏EikoMusicUserbot**\n**❏Pinging** : {delta_ping * 1000:.3f} ms\n**❏Bot Uptime** : {uptime}")
+       f"**❏MusicUserbot**\n**❏Pinging** : {delta_ping * 1000:.3f} ms\n**❏Bot Uptime** : {uptime}")
 
 @Client.on_message(
     filters.user(SUDO_USERS) & filters.command(["restart"], prefixes=f"{HNDLR}")
@@ -90,7 +90,7 @@ async def restart(client, m: Message):
     await loli.edit("7")
     await loli.edit("8")
     await loli.edit("9")
-    await loli.edit("**✅ Eiko Music Userbot Di Restart Ulang**")
+    await loli.edit("**✅ Music Userbot Di Restart Ulang**")
     os.execl(sys.executable, sys.executable, *sys.argv)
     quit()
 
@@ -100,7 +100,7 @@ async def help(client, m: Message):
     await m.delete()
     HELP = f"""
 <b>👋 Hallo {m.from_user.mention}!
-🛠 MENU BANTUAN EIKO MUSIC PLAYER
+🛠 MENU BANTUAN MUSIC PLAYER
 ⚡ PERINTAH UNTUK SEMUA ORANG
 • {HNDLR}play [judul lagu | link youtube | balas file audio] - untuk memutar lagu
 • {HNDLR}videoplay [judul video | link youtube | balas file video] - untuk memutar video
@@ -116,6 +116,8 @@ async def help(client, m: Message):
 • {HNDLR}pause - untuk untuk menjeda pemutaran lagu atau video
 • {HNDLR}skip - untuk melewati lagu atau video (Khusus Perintah ini sudah bisa untuk semua) 
 • {HNDLR}end - untuk mengakhiri pemutaran</b>
+
+Dibuat Oleh [Az](https://t.me/tth_kiya98) 
 """
     await m.reply(HELP)
 
