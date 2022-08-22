@@ -16,7 +16,6 @@ from config import HNDLR, bot, call_py
 from MusicRioUserbot.helpers.queues import QUEUE, add_to_queue, get_queue
 
 
-
 def convert_seconds(seconds):
     seconds = seconds % (24 * 3600)
     seconds %= 3600
