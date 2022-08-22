@@ -15,7 +15,7 @@ async def skip(client, m: Message):
         if op == 0:
             await m.reply("**❌ Tidak ada apapun didalam antrian untuk dilewati!**")
         elif op == 1:
-            await m.reply("Nggak ada yang request, Meninggalkan vcg dulu bye**")
+            await m.reply("Tidak ada Antrian, Meninggalkan Obrolan Suara**")
         else:
             await m.reply(
                 f"**⏭ Melewati pemutaran** \n**🎵 Sekarang memutar** - [{op[0]}]({op[1]}) | `{op[2]}`",
