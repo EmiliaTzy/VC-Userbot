@@ -22,7 +22,7 @@ async def gen_thumb(thumbnail, title, userid, ctitle):
                 await f.write(await resp.read())
                 await f.close()
     image1 = Image.open(f"search/thumb{userid}.png")
-    image2 = Image.open(f"MusicAndVideo/helpers/other/choose/rrc.png")
+    image2 = Image.open(f"MusicRioUserbot/helpers/other/choose/rrc.png")
     image3 = changeImageSize(1280, 720, image1)
     image4 = changeImageSize(1280, 720, image2)
     image5 = image3.convert("RGBA")
@@ -30,11 +30,11 @@ async def gen_thumb(thumbnail, title, userid, ctitle):
     Image.alpha_composite(image5, image6).save(f"search/temp{userid}.png")
     img = Image.open(f"search/temp{userid}.png")
     draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype("MusicAndVideo/helpers/other/choose/Roboto-Light.ttf", 55)
-    font2 = ImageFont.truetype("MusicAndVideo/helpers/other/choose/finalfont.ttf", 65)
+    font = ImageFont.truetype("MusicRioUserbot/helpers/other/choose/Roboto-Light.ttf", 55)
+    font2 = ImageFont.truetype("MusicRioUserbot/helpers/other/choose/finalfont.ttf", 65)
     draw.text(
         (20, 630),
-        f"{title[:25]}...",
+        f"{title[:35]}...",
         fill="White",
         stroke_width=1,
         stroke_fill="black",
@@ -42,7 +42,7 @@ async def gen_thumb(thumbnail, title, userid, ctitle):
     )
     draw.text(
         (20, 550),
-        f"Playing on: {ctitle[:15]}...",
+        f"Playing on: {ctitle[:35]}...",
         fill="White",
         stroke_width=1,
         stroke_fill="black",
