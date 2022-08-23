@@ -7,7 +7,7 @@
         "MusicPlayer",
         "VideoPlayer"
     ],
-    "repository": "https://github.com/RioProjectX/VC-Userbot",
+    "repository": "https://github.com/EmiliaTzy/VC-Userbot",
     "env": {
         "SESSION": {
             "description": "Pyrogram String Session",
