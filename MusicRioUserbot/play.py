@@ -54,8 +54,8 @@ async def ytdl(link):
         # CHANGE THIS BASED ON WHAT YOU WANT
         "bestaudio",
         f"{link}",
-        stdout=asyncio.subprocess.EPIPE,
-        stderr=asyncio.subprocess.EPIPE,
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE,
     )
     stdout, stderr = await proc.communicate()
     if stdout:
