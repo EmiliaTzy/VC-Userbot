@@ -54,8 +54,8 @@ async def ytdl(link):
         # CHANGE THIS BASED ON WHAT YOU WANT
         "bestaudio",
         f"{link}",
-        stdout=asyncio.subprocess.PIPE,
-        stderr=asyncio.subprocess.PIPE,
+        stdout=asyncio.subprocess.EPIPE,
+        stderr=asyncio.subprocess.EPIPE,
     )
     stdout, stderr = await proc.communicate()
     if stdout:
@@ -167,10 +167,7 @@ async def play(client, m: Message):
                 await huehue.edit("`Tidak Menemukan Apapun untuk Kueri yang Diberikan`")
             else:
                 songname = search[0]
-                title = search[0]
                 url = search[1]
-                duration = search[2]
-                thumbnail = search[3]
                 hm, ytlink = await ytdl(url)
                 if hm == 0:
                     await huehue.edit(f"**YTDL ERROR¸** \n\n`{ytlink}`")
@@ -300,11 +297,8 @@ async def videoplay(client, m: Message):
                     "**Tidak Menemukan Apa pun untuk Kueri yang Diberikan**"
                 )
             else:
-                songname = search[0]
-                title = search[0]
-                url = search[1]
-                duration = search[2]
-                thumbnail = search[3]
+                songname = search[0]                
+                url = search[1]                
                 hm, ytlink = await ytdl(url)
                 if hm == 0:
                     await huehue.edit(f"**YTDL ERROR¸** \n\n`{ytlink}`")
