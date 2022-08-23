@@ -14,20 +14,9 @@ from pytgcalls.types.input_stream.quality import (
 from youtubesearchpython import VideosSearch
 
 from config import HNDLR, bot, call_py
-from MusicUserbot.helpers.queues import QUEUE, add_to_queue, get_queue
+from MusicRioUserbot.helpers.queues import QUEUE, add_to_queue, get_queue
 
 AMBILFOTO = [
-    "https://telegra.ph/file/613f681a511feb6d1b186.jpg",
-    "https://telegra.ph/file/613f681a511feb6d1b186.jpg",
-    "https://telegra.ph/file/613f681a511feb6d1b186.jpg",
-    "https://telegra.ph/file/613f681a511feb6d1b186.jpg",
-    "https://telegra.ph/file/613f681a511feb6d1b186.jpg",
-    "https://telegra.ph/file/613f681a511feb6d1b186.jpg",
-    "https://telegra.ph/file/613f681a511feb6d1b186.jpg",
-    "https://telegra.ph/file/613f681a511feb6d1b186.jpg",
-    "https://telegra.ph/file/613f681a511feb6d1b186.jpg",
-    "https://telegra.ph/file/613f681a511feb6d1b186.jpg",
-    "https://telegra.ph/file/613f681a511feb6d1b186.jpg",
     "https://telegra.ph/file/613f681a511feb6d1b186.jpg",
 ]
 
@@ -49,7 +38,7 @@ def ytsearch(query):
         for r in search.result()["result"]:
             ytid = r["id"]
             if len(r["title"]) > 34:
-                songname = r["title"][:35] + "..."
+                songname = r["title"][:60] + "..."
             else:
                 songname = r["title"]
             url = f"https://www.youtube.com/watch?v={ytid}"
@@ -85,7 +74,7 @@ def ytsearch(query):
         for r in search.result()["result"]:
             ytid = r["id"]
             if len(r["title"]) > 34:
-                songname = r["title"][:35] + "..."
+                songname = r["title"][:60] + "..."
             else:
                 songname = r["title"]
             url = f"https://www.youtube.com/watch?v={ytid}"
@@ -139,7 +128,7 @@ async def play(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://telegra.ph/file/613f681a511feb6d1b186.jpg",
+                    photo="https://telegra.ph/file/0d7f7fda236a5e989cb13.jpg",
                     caption=f"""
 **▶ Lagu Di Antrian Ke** `{pos}`
 🏷 **Judul:** [{songname}]({link})
@@ -160,7 +149,7 @@ async def play(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://telegra.ph/file/613f681a511feb6d1b186.jpg",
+                    photo="https://telegra.ph/file/0d7f7fda236a5e989cb13.jpg",
                     caption=f"""
 **▶ Mulai Memutar Lagu**
 🏷 **Judul:** [{songname}]({link})
@@ -186,7 +175,7 @@ async def play(client, m: Message):
                 duration = search[2]
                 hm, ytlink = await ytdl(url)
                 if hm == 0:
-                    await huehue.edit(f"**YTDL ERROR âš ï¸** \n\n`{ytlink}`")
+                    await huehue.edit(f"**YTDL ERROR¸** \n\n`{ytlink}`")
                 else:
                     if chat_id in QUEUE:
                         pos = add_to_queue(chat_id, songname, ytlink, url, "Audio", 0)
@@ -263,7 +252,7 @@ async def videoplay(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://telegra.ph/file/613f681a511feb6d1b186.jpg",
+                    photo="https://telegra.ph/file/0d7f7fda236a5e989cb13.jpg",
                     caption=f"""
 **▶ Video Di Antrian Ke {pos}
 🏷️ Judul: [{songname}]({link})
@@ -287,7 +276,7 @@ async def videoplay(client, m: Message):
                 await huehue.delete()
                 # await m.reply_to_message.delete()
                 await m.reply_photo(
-                    photo="https://telegra.ph/file/613f681a511feb6d1b186.jpg",
+                    photo="https://telegra.ph/file/0d7f7fda236a5e989cb13.jpg",
                     caption=f"""
 **▶ Mulai Memutar Video
 🏷️ Judul: [{songname}]({link})
@@ -303,7 +292,7 @@ async def videoplay(client, m: Message):
             )
         else:
             await m.delete()
-            huehue = await m.reply("**ðŸ”Ž Pencarian Lagu... Mohon Bersabar**")
+            huehue = await m.reply("**Pencarian Lagu... Mohon Bersabar**")
             query = m.text.split(None, 1)[1]
             search = ytsearch(query)
             Q = 720
@@ -318,7 +307,7 @@ async def videoplay(client, m: Message):
                 duration = search[2]
                 hm, ytlink = await ytdl(url)
                 if hm == 0:
-                    await huehue.edit(f"**YTDL ERROR âš ï¸** \n\n`{ytlink}`")
+                    await huehue.edit(f"**YTDL ERROR¸** \n\n`{ytlink}`")
                 else:
                     if chat_id in QUEUE:
                         pos = add_to_queue(chat_id, songname, ytlink, url, "Video", Q)
@@ -380,9 +369,9 @@ async def playfrom(client, m: Message):
             async for x in bot.search_messages(chat, limit=limit, filter="audio"):
                 location = await x.download()
                 if x.audio.title:
-                    songname = x.audio.title[:30] + "..."
+                    songname = x.audio.title[:60] + "..."
                 else:
-                    songname = x.audio.file_name[:30] + "..."
+                    songname = x.audio.file_name[:60] + "..."
                 link = x.link
                 if chat_id in QUEUE:
                     add_to_queue(chat_id, songname, location, link, "Audio", 0)
@@ -395,7 +384,7 @@ async def playfrom(client, m: Message):
                     add_to_queue(chat_id, songname, location, link, "Audio", 0)
                     # await m.reply_to_message.delete()
                     await m.reply_photo(
-                        photo="https://telegra.ph/file/613f681a511feb6d1b186.jpg",
+                        photo="https://telegra.ph/file/0d7f7fda236a5e989cb13.jpg",
                         caption=f"""
 **▶ Mulai Memutar Lagu Dari {chat}
 🏷️ Judul: [{songname}]({link})
@@ -405,7 +394,7 @@ async def playfrom(client, m: Message):
                     )
             await hmm.delete()
             await m.reply(
-                f"âž• Menambahkan {lmt} Lagu Ke Dalam Antrian\nâ€¢ Klik {HNDLR}playlist Untuk Melihat Daftar Putar**"
+                f"Menambahkan {lmt} Lagu Ke Dalam Antrian\nKlik {HNDLR}playlist Untuk Melihat Daftar Putar**"
             )
         except Exception as e:
             await hmm.edit(f"**ERROR** \n`{e}`")
