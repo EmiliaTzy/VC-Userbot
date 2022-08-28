@@ -1,4 +1,3 @@
-from MusicRioUserbot import pbot as app
 from MusicRioUserbot import capture_err
 from MusicRioUserbot import get_couple, save_couple
 from pyrogram import filters
