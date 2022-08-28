@@ -101,6 +101,7 @@ async def help(client, m: Message):
     HELP = f"""
 <b>👋 Hallo {m.from_user.mention}!
 🛠 MENU BANTUAN MUSIC PLAYER
+
 ⚡ PERINTAH UNTUK SEMUA ORANG
 • {HNDLR}play [judul lagu | link youtube | balas file audio] - untuk memutar lagu
 • {HNDLR}videoplay [judul video | link youtube | balas file video] - untuk memutar video
@@ -110,7 +111,8 @@ async def help(client, m: Message):
 • {HNDLR}video - judul video | link yt untuk mencari video
 • {HNDLR}song - judul lagu | link yt untuk mencari lagu
 • {HNDLR}help - untuk melihat daftar perintah
-• {HNDLR}join- untuk join | ke grup 
+• {HNDLR}join- untuk join | ke grup
+
 ⚡ PERINTAH UNTUK SEMUA ADMIN
 • {HNDLR}resume - untuk melanjutkan pemutaran lagu atau video
 • {HNDLR}pause - untuk untuk menjeda pemutaran lagu atau video
