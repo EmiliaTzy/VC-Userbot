@@ -406,7 +406,7 @@ async def playlist(client, m: Message):
                 disable_web_page_preview=True,
             )
         else:
-            QUE = f"**✧ SEKARANG MEMUTAR:** \n[{chat_queue[0][0]}]({chat_queue[0][2]}) | `{chat_queue[0][3]}` \n\n**â¯ DAFTAR ANTRIAN:**"
+            QUE = f"**✧ SEKARANG MEMUTAR:** \n[{chat_queue[0][0]}]({chat_queue[0][2]}) | `{chat_queue[0][3]}` \n\n**💾 DAFTAR ANTRIAN:**"
             l = len(chat_queue)
             for x in range(1, l):
                 hmm = chat_queue[x][0]
