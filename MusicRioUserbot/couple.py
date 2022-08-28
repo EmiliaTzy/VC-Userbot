@@ -1,6 +1,6 @@
-from Tianabot import pbot as app
-from Tianabot.utils.errors import capture_err
-from Tianabot.utils.dbfunctions import get_couple, save_couple
+from MusicRioUaerbot import pbot as app
+from MusicRioUserbot.utils.errors import capture_err
+from MusicRioUserbot.utils.dbfunctions import get_couple, save_couple
 from pyrogram import filters
 import random
 from datetime import datetime
